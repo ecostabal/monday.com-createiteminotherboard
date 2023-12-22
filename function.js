@@ -95,7 +95,7 @@ exports.otToFactura = async (req, res) => {
         const gastoNotarial = parseFloat(gastoNotarialColumn.text);
 
         // Calculos
-        const comisionArriendo = valorArriendo * comisionRate;
+        const comisionArriendo = Math.round(valorArriendo * comisionRate);
         const montoNeto = comisionArriendo + gastoNotarial;
 
         // Crear un nuevo item en otro tablero
